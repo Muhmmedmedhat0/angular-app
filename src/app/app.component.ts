@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { UserComponent } from './user/user.component';
 
 // The @Component decorator is a typescript feature
 // that provides metadata
@@ -9,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, UserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
