@@ -1,7 +1,9 @@
 <div>
   <button (click)="onSelctUser()">
-    <img src="{{ imagePATH }}" alt="{{ slectedUser.name }}" />
-    <!-- string interpolation -->
-    <span>{{ slectedUser.name }}</span>
+    <img src="{{ imagePATH() }}" alt="{{ slectedUser().name }}" />
+    <!--
+    string interpolation is used to bind the value of the expression to the element
+     -->
+    <span>{{ slectedUser().name }}</span>
   </button>
 </div>
