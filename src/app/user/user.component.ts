@@ -10,8 +10,8 @@ import { DUMMY_USERS } from '../dummy-users';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input() avatar!: string;
-  @Input() name!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
 
   // Get the image path for the selected user
   get imagePATH() {
