@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { DUMMY_USERS } from './dummy-users';
 
 // The @Component decorator is a typescript feature
 // that provides metadata
@@ -18,5 +19,5 @@ import { UserComponent } from './user/user.component';
 // The class AppComponent is the application root component
 // and is responsible for presenting the application view
 export class AppComponent {
-  title = 'angular-app';
+  users = DUMMY_USERS;
 }
