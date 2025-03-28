@@ -1,4 +1,11 @@
-import { Component, computed, Input, input } from '@angular/core';
+import {
+  Component,
+  computed,
+  EventEmitter,
+  Input,
+  input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -10,11 +17,11 @@ export class UserComponent {
   // The @Input decorator is a typescript feature
   // that provides metadata
 
+  @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
 
-  // // The input signal decorator is a typescript feature
-  // // that provides metadata
+  @Output() selected = new EventEmitter<string>();
 
   // avatar = input.required<string>();
   // name = input.required<string>();
@@ -23,6 +30,6 @@ export class UserComponent {
   });
 
   onSelctUser() {
-    console.log(`${this.name} selected`);
+    this.selected.emit(this.id);
   }
 }

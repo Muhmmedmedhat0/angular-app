@@ -20,4 +20,8 @@ import { DUMMY_USERS } from './dummy-users';
 // and is responsible for presenting the application view
 export class AppComponent {
   users = DUMMY_USERS;
+
+  onSelectedUser(id: string) {
+    console.log(id);
+  }
 }
