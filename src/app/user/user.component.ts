@@ -7,6 +7,12 @@ import {
   Output,
 } from '@angular/core';
 
+type User = {
+  id: string;
+  avatar: string;
+  name: string;
+};
+
 @Component({
   selector: 'app-user',
   imports: [],
@@ -17,11 +23,7 @@ export class UserComponent {
   // The @Input decorator is a typescript feature
   // that provides metadata
 
-  @Input({ required: true }) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  };
+  @Input({ required: true }) user!: User;
 
   @Output() selected = new EventEmitter<string>();
 
