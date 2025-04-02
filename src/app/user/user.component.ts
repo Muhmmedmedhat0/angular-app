@@ -3,15 +3,14 @@ import {
   computed,
   EventEmitter,
   Input,
-  input,
   Output,
 } from '@angular/core';
 
-type User = {
+interface User {
   id: string;
   avatar: string;
   name: string;
-};
+}
 
 @Component({
   selector: 'app-user',
