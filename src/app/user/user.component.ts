@@ -17,19 +17,19 @@ export class UserComponent {
   // The @Input decorator is a typescript feature
   // that provides metadata
 
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) user!: {
+    id: string;
+    avatar: string;
+    name: string;
+  };
 
   @Output() selected = new EventEmitter<string>();
 
-  // avatar = input.required<string>();
-  // name = input.required<string>();
   image = computed(() => {
-    return `/assets/users/${this.avatar}`;
+    return `/assets/users/${this.user.avatar}`;
   });
 
   onSelctUser() {
-    this.selected.emit(this.id);
+    this.selected.emit(this.user.id);
   }
 }

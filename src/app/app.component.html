@@ -3,41 +3,18 @@
   <main>
     <ul id="users">
       <li>
-        <app-user
-          [id]="users[0].id"
-          [name]="users[0].name"
-          [avatar]="users[0].avatar"
-          (selected)="onSelectedUser($event)"
-        />
+        <app-user [user]="users[0]" (selected)="onSelectedUser($event)" />
       </li>
       <li>
-        <app-user
-          [id]="users[1].id"
-          [name]="users[1].name"
-          [avatar]="users[1].avatar"
-          (selected)="onSelectedUser($event)"
-        />
+        <app-user [user]="users[1]" (selected)="onSelectedUser($event)" />
       </li>
       <li>
-        <app-user
-          [id]="users[2].id"
-          [name]="users[2].name"
-          [avatar]="users[2].avatar"
-          (selected)="onSelectedUser($event)"
-        />
+        <app-user [user]="users[2]" (selected)="onSelectedUser($event)" />
       </li>
       <li>
-        <app-user
-          [id]="users[3].id"
-          [name]="users[3].name"
-          [avatar]="users[3].avatar"
-          (selected)="onSelectedUser($event)"
-        />
+        <app-user [user]="users[3]" (selected)="onSelectedUser($event)" />
       </li>
     </ul>
-    <app-tasks
-      [name]="selectedUser.name"
-
-    />
+    <app-tasks [name]="selectedUser.name" />
   </main>
 </router-outlet>
