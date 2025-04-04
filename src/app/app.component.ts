@@ -4,7 +4,6 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './dummy-users';
 import { TasksComponent } from './tasks/tasks.component';
-import { NgFor, NgIf } from '@angular/common';
 
 // The @Component decorator is a typescript feature
 // that provides metadata
@@ -13,14 +12,7 @@ import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    UserComponent,
-    TasksComponent,
-    NgFor,
-    NgIf,
-  ],
+  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
