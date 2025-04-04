@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { DUMMY_USERS } from './dummy-users';
 import { TasksComponent } from './tasks/tasks.component';
+import { NgFor, NgIf } from '@angular/common';
 
 // The @Component decorator is a typescript feature
 // that provides metadata
@@ -12,7 +13,14 @@ import { TasksComponent } from './tasks/tasks.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    UserComponent,
+    TasksComponent,
+    NgFor,
+    NgIf,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -22,7 +30,7 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   users = DUMMY_USERS;
 
-  selectedUserId? : string
+  selectedUserId?: string;
 
   get selectedUser() {
     return this.users.find((user) => user.id === this.selectedUserId)!;
