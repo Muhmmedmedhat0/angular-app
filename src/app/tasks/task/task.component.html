@@ -1,6 +1,5 @@
 <article>
   <h2>{{ task.title }}</h2>
-  <!-- <time datetime="">{}</time> -->
   <time [attr.datetime]="task.dueDate.toISOString()"
     >{{
       task.dueDate.toLocaleTimeString([], {
@@ -11,6 +10,6 @@
   </time>
   <p>{{ task.summary }}</p>
   <p class="actions">
-    <button>compleate</button>
+    <button (click)="onCompleteTask()">compleate</button>
   </p>
 </article>
