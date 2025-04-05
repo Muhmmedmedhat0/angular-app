@@ -18,7 +18,7 @@ export class UserComponent {
   // that provides metadata
 
   @Input({ required: true }) user!: User;
-
+  @Input() selectedUser!: boolean;
   @Output() selected = new EventEmitter<string>();
 
   image = computed(() => {
