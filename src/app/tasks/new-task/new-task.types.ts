@@ -1,6 +1,4 @@
-export interface Task {
-  id: string;
-  userId: string;
+export interface NewTask {
   title: string;
   summary: string;
   dueDate: string;
