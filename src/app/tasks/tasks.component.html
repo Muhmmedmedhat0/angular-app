@@ -1,7 +1,7 @@
 @if (isAddingTask) {
 <app-new-task
   (close)="onCloseTask()"
-  (submit)="onSubmitTask($event)"
+  (submit)="onSubmitTask()"
   [userId]="userId"
 />
 }

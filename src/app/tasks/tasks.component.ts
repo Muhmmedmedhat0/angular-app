@@ -33,8 +33,7 @@ export class TasksComponent {
     this.isAddingTask = false;
   }
 
-  onSubmitTask(task: NewTask) {
-    this.tasksService.addTask(task, this.userId);
+  onSubmitTask() {
     this.isAddingTask = false;
   }
 }
