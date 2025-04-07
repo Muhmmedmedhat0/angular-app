@@ -4,6 +4,18 @@ import { type Task } from './task/task.types';
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {
+  constructor() {
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+      this.tasks = JSON.parse(tasks);
+    }
+  }
+
+  // Persist tasks to localStorage
+  private saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
   private tasks: Task[] = [
     {
       id: 't1',
@@ -95,6 +107,7 @@ export class TasksService {
   getUserTasks(userId: string) {
     return this.tasks.filter((task) => task.userId === userId);
   }
+
   // Method to add a new task
   addTask(task: NewTask, userId: string) {
     this.tasks.unshift({
@@ -104,10 +117,12 @@ export class TasksService {
       summary: task.summary,
       dueDate: task.dueDate,
     });
+    this.saveTasks();
   }
 
   // Method to delete a task by ID
   removeTask(id: string) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.saveTasks();
   }
 }
