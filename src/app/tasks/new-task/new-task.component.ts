@@ -20,24 +20,32 @@ import { TasksService } from '../tasks.service';
 export class NewTaskComponent {
   private tasksService = inject(TasksService);
   @Output() close = new EventEmitter<void>();
-  @Output() submit = new EventEmitter<NewTask>();
   @Input({ required: true }) userId!: string;
 
-  title: string = '';
-  summary: string = '';
-  dueDate: string = '';
+  title = signal<string>('');
+  summary = signal<string>('');
+  dueDate = signal<string>('');
 
+  /**
+   * The `onClose` function emits a close event.
+   */
   onClose() {
     this.close.emit();
   }
+
+  /**
+   * The onSubmit function adds a new task with title, summary, and due date to the tasks service for a
+   * specific user and then emits a close event.
+   */
   onSubmit() {
     this.tasksService.addTask(
       {
-        title: this.title,
-        summary: this.summary,
-        dueDate: this.dueDate,
+        title: this.title(),
+        summary: this.summary(),
+        dueDate: this.dueDate(),
       },
       this.userId
     );
+    this.close.emit();
   }
 }
