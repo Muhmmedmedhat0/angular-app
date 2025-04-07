@@ -1,6 +1,6 @@
 <app-card>
   <button [class.active]="selectedUser" (click)="onSelctUser()">
-    <img src="{{ image() }}" alt="{{ user.name }}" />
+    <img src="{{ image() }}" alt="{{ user.name }}" loading="eager" />
     <span>{{ user.name }}</span>
   </button>
 </app-card>
