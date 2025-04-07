@@ -98,7 +98,7 @@ export class TasksService {
   // Method to add a new task
   addTask(task: NewTask, userId: string) {
     this.tasks.unshift({
-      id: Math.random().toString(),
+      id: 't' + (this.tasks.length + 1),
       userId: userId,
       title: task.title,
       summary: task.summary,
